@@ -21,6 +21,7 @@ namespace Repasoi1
 
         private void Leer() 
         {
+            // Abre el archivo para leer
             string fileName = @"C:\Users\hp\Desktop\UMES 2025\3 semestre ing\Progra III\Repaso1\Empleados.txt";
             FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(stream);
@@ -42,6 +43,8 @@ namespace Repasoi1
 
         private void GuardadEmpleados()
         {
+
+            // Abre el archivo para escribir (crea el archivo si no existe)
             FileStream Stream = new FileStream(@"C:\Users\hp\Desktop\UMES 2025\3 semestre ing\Progra III\Repaso1\Empleados.txt", FileMode.OpenOrCreate, FileAccess.Write);
             StreamWriter writer = new StreamWriter(Stream);
             foreach (var empleado in empleado2)
@@ -82,7 +85,7 @@ namespace Repasoi1
         {
             Leer();
             mostrar();
-            numericUpDownNoEmpleado.Value = empleado2.Count + 1;
+            numericUpDownNoEmpleado.Value = empleado2.Count + 1;// Asigna el número de empleado automáticamente al cargar el formulario
 
 
         }
