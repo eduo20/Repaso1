@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics.Eventing.Reader;
 
 namespace Repasoi1
 {
@@ -19,26 +20,32 @@ namespace Repasoi1
             InitializeComponent();
         }
 
-        private void Leer() 
+        private void Leer()
         {
             // Abre el archivo para leer
             string fileName = @"C:\Users\hp\Desktop\UMES 2025\3 semestre ing\Progra III\Repaso1\Empleados.txt";
+
+            if (File.Exists(fileName)) { 
             FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(stream);
+            
+                while (reader.Peek() > -1)
+                {
 
-            while (reader .Peek() > -1)
-            {
+                    // Lee cada línea del archivo y asigna los valores a las propiedades del objeto Empleados
+                    Empleados empleado = new Empleados();
+                    empleado.NoEmpleado = Convert.ToInt16(reader.ReadLine());
+                    empleado.Nombre = reader.ReadLine();
+                    empleado.Apellido = reader.ReadLine();
+                    empleado.SuedoHora = Convert.ToDecimal(reader.ReadLine());
 
-                // Lee cada línea del archivo y asigna los valores a las propiedades del objeto Empleados
-                Empleados empleado = new Empleados();
-                empleado.NoEmpleado = Convert.ToInt16(reader.ReadLine());
-                empleado.Nombre = reader.ReadLine();
-                empleado.Apellido = reader.ReadLine();
-                empleado.SuedoHora = Convert.ToDecimal(reader.ReadLine());
+                    empleado2.Add(empleado);
+                }
 
-                empleado2.Add(empleado);
+                    reader.Close();
+                
+                
             }
-            reader.Close();
         }
 
         private void GuardadEmpleados()
