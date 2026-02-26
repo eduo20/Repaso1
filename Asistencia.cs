@@ -9,11 +9,11 @@ namespace Repasoi1
     internal class Asistencia
     {
         int noEmpleado;
-        int horasTrabajadas;
+        decimal horasTrabajadas;
         int mes;
 
         public int NoEmpleado { get => noEmpleado; set => noEmpleado = value; }
-        public int HorasTrabajadas { get => horasTrabajadas; set => horasTrabajadas = value; }
+        public decimal HorasTrabajadas { get => horasTrabajadas; set => horasTrabajadas = value; }
         public int Mes { get => mes; set => mes = value; }
     }
 }
