@@ -41,19 +41,29 @@
             this.numericUpDownNoEmpleado = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridViewReporte = new System.Windows.Forms.DataGridView();
-            this.buttonGenerar_Reporte = new System.Windows.Forms.Button();
+            this.numericUpDownno_Empleado = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.buttonAsistencia = new System.Windows.Forms.Button();
             this.dataGridViewAsistencias = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.buttonGenerar_Reporte = new System.Windows.Forms.Button();
+            this.dataGridViewReporte = new System.Windows.Forms.DataGridView();
+            this.numericUpDownHoras_Trabajadas = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownMes = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSueldoHora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNoEmpleado)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownno_Empleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistencias)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReporte)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistencias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHoras_Trabajadas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMes)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -174,6 +184,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.numericUpDownMes);
+            this.tabPage2.Controls.Add(this.numericUpDownHoras_Trabajadas);
+            this.tabPage2.Controls.Add(this.numericUpDownno_Empleado);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.buttonAsistencia);
             this.tabPage2.Controls.Add(this.dataGridViewAsistencias);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -182,6 +199,60 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Asistencias";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDownno_Empleado
+            // 
+            this.numericUpDownno_Empleado.Location = new System.Drawing.Point(290, 48);
+            this.numericUpDownno_Empleado.Name = "numericUpDownno_Empleado";
+            this.numericUpDownno_Empleado.Size = new System.Drawing.Size(245, 22);
+            this.numericUpDownno_Empleado.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(41, 157);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 16);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Ingrese el mes:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(35, 99);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(184, 16);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Ingrese las horas trabajadas: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(31, 49);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(204, 16);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Ingrese el numero de empleado: ";
+            // 
+            // buttonAsistencia
+            // 
+            this.buttonAsistencia.Location = new System.Drawing.Point(452, 399);
+            this.buttonAsistencia.Name = "buttonAsistencia";
+            this.buttonAsistencia.Size = new System.Drawing.Size(184, 84);
+            this.buttonAsistencia.TabIndex = 1;
+            this.buttonAsistencia.Text = "Generar asistencia";
+            this.buttonAsistencia.UseVisualStyleBackColor = true;
+            this.buttonAsistencia.Click += new System.EventHandler(this.buttonAsistencia_Click);
+            // 
+            // dataGridViewAsistencias
+            // 
+            this.dataGridViewAsistencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAsistencias.Location = new System.Drawing.Point(653, 36);
+            this.dataGridViewAsistencias.Name = "dataGridViewAsistencias";
+            this.dataGridViewAsistencias.RowHeadersWidth = 51;
+            this.dataGridViewAsistencias.RowTemplate.Height = 24;
+            this.dataGridViewAsistencias.Size = new System.Drawing.Size(316, 320);
+            this.dataGridViewAsistencias.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -195,16 +266,6 @@
             this.tabPage3.Text = "Reporte";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewReporte
-            // 
-            this.dataGridViewReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewReporte.Location = new System.Drawing.Point(169, 64);
-            this.dataGridViewReporte.Name = "dataGridViewReporte";
-            this.dataGridViewReporte.RowHeadersWidth = 51;
-            this.dataGridViewReporte.RowTemplate.Height = 24;
-            this.dataGridViewReporte.Size = new System.Drawing.Size(809, 325);
-            this.dataGridViewReporte.TabIndex = 0;
-            // 
             // buttonGenerar_Reporte
             // 
             this.buttonGenerar_Reporte.Location = new System.Drawing.Point(480, 443);
@@ -215,15 +276,30 @@
             this.buttonGenerar_Reporte.UseVisualStyleBackColor = true;
             this.buttonGenerar_Reporte.Click += new System.EventHandler(this.buttonGenerar_Reporte_Click);
             // 
-            // dataGridViewAsistencias
+            // dataGridViewReporte
             // 
-            this.dataGridViewAsistencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAsistencias.Location = new System.Drawing.Point(163, 36);
-            this.dataGridViewAsistencias.Name = "dataGridViewAsistencias";
-            this.dataGridViewAsistencias.RowHeadersWidth = 51;
-            this.dataGridViewAsistencias.RowTemplate.Height = 24;
-            this.dataGridViewAsistencias.Size = new System.Drawing.Size(806, 320);
-            this.dataGridViewAsistencias.TabIndex = 0;
+            this.dataGridViewReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReporte.Location = new System.Drawing.Point(169, 64);
+            this.dataGridViewReporte.Name = "dataGridViewReporte";
+            this.dataGridViewReporte.RowHeadersWidth = 51;
+            this.dataGridViewReporte.RowTemplate.Height = 24;
+            this.dataGridViewReporte.Size = new System.Drawing.Size(809, 325);
+            this.dataGridViewReporte.TabIndex = 0;
+            // 
+            // numericUpDownHoras_Trabajadas
+            // 
+            this.numericUpDownHoras_Trabajadas.DecimalPlaces = 2;
+            this.numericUpDownHoras_Trabajadas.Location = new System.Drawing.Point(288, 99);
+            this.numericUpDownHoras_Trabajadas.Name = "numericUpDownHoras_Trabajadas";
+            this.numericUpDownHoras_Trabajadas.Size = new System.Drawing.Size(246, 22);
+            this.numericUpDownHoras_Trabajadas.TabIndex = 6;
+            // 
+            // numericUpDownMes
+            // 
+            this.numericUpDownMes.Location = new System.Drawing.Point(285, 159);
+            this.numericUpDownMes.Name = "numericUpDownMes";
+            this.numericUpDownMes.Size = new System.Drawing.Size(248, 22);
+            this.numericUpDownMes.TabIndex = 7;
             // 
             // Form1
             // 
@@ -241,9 +317,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSueldoHora)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNoEmpleado)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownno_Empleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistencias)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReporte)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistencias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHoras_Trabajadas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,6 +347,13 @@
         private System.Windows.Forms.Button buttonGenerar_Reporte;
         private System.Windows.Forms.DataGridView dataGridViewReporte;
         private System.Windows.Forms.DataGridView dataGridViewAsistencias;
+        private System.Windows.Forms.Button buttonAsistencia;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numericUpDownno_Empleado;
+        private System.Windows.Forms.NumericUpDown numericUpDownHoras_Trabajadas;
+        private System.Windows.Forms.NumericUpDown numericUpDownMes;
     }
 }
 

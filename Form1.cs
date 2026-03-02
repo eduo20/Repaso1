@@ -14,16 +14,16 @@ namespace Repasoi1
 {
     public partial class Form1 : Form
     {
-        List <Empleados> empleado2 = new List<Empleados>();
+        List<Empleados> empleado2 = new List<Empleados>();
         List<Asistencia> asistencia2 = new List<Asistencia>();
         List<Reporte> reporte2 = new List<Reporte>();
         public Form1()
         {
             InitializeComponent();
         }
-       
 
-        
+
+
         private void LeerAsistencia()
         {
             string fileName = @"C:\Users\hp\Desktop\UMES 2025\3 semestre ing\Progra III\Repaso1\Asistencia.txt";
@@ -55,10 +55,11 @@ namespace Repasoi1
             // Abre el archivo para leer
             string fileName = @"C:\Users\hp\Desktop\UMES 2025\3 semestre ing\Progra III\Repaso1\Empleados.txt";
 
-            if (File.Exists(fileName)) { 
-            FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
-            StreamReader reader = new StreamReader(stream);
-            
+            if (File.Exists(fileName))
+            {
+                FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                StreamReader reader = new StreamReader(stream);
+
                 while (reader.Peek() > -1)
                 {
 
@@ -72,9 +73,9 @@ namespace Repasoi1
                     empleado2.Add(empleado);
                 }
 
-                    reader.Close();
-                
-                
+                reader.Close();
+
+
             }
         }
 
@@ -96,6 +97,20 @@ namespace Repasoi1
 
         }
 
+        private void GuardarAsistencia()
+        {
+            // Abre el archivo para escribir (crea el archivo si no existe)
+            FileStream Stream = new FileStream(@"C:\Users\hp\Desktop\UMES 2025\3 semestre ing\Progra III\Repaso1\Asistencia.txt", FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(Stream);
+            foreach (var asistencia in asistencia2)
+            {
+                writer.WriteLine(asistencia.NoEmpleado);
+                writer.WriteLine(asistencia.HorasTrabajadas);
+                writer.WriteLine(asistencia.Mes);
+            }
+            writer.Close();
+        }
+
         private void mostrar()
         {
             dataGridView1 = null;
@@ -108,7 +123,7 @@ namespace Repasoi1
             dataGridViewReporte.DataSource = null;
             dataGridViewReporte.DataSource = reporte2;
 
-            
+
         }
 
 
@@ -123,7 +138,7 @@ namespace Repasoi1
             empleado2.Add(empleado);
 
             GuardadEmpleados();
-            
+
 
         }
 
@@ -133,18 +148,18 @@ namespace Repasoi1
             LeerAsistencia();
             mostrar();
             numericUpDownNoEmpleado.Value = empleado2.Count + 1;// Asigna el número de empleado automáticamente al cargar el formulario
-            
+
 
 
         }
 
         private void buttonGenerar_Reporte_Click(object sender, EventArgs e)
         {
-            foreach(var empleado in empleado2)
+            foreach (var empleado in empleado2)
             {
-                foreach(var asistencia in asistencia2)
+                foreach (var asistencia in asistencia2)
                 {
-                    if(empleado.NoEmpleado == asistencia.NoEmpleado)
+                    if (empleado.NoEmpleado == asistencia.NoEmpleado)
                     {
                         Reporte reporte = new Reporte();
                         reporte.Nombre = empleado.Nombre;
@@ -158,6 +173,17 @@ namespace Repasoi1
                 }
             }
             mostrar();
+        }
+
+        private void buttonAsistencia_Click(object sender, EventArgs e)
+        {
+            Asistencia asistencia = new Asistencia();
+            asistencia.NoEmpleado = Convert.ToInt16(numericUpDownno_Empleado.Text);
+            asistencia.HorasTrabajadas = numericUpDownHoras_Trabajadas.Value;
+            asistencia.Mes = Convert.ToInt16(numericUpDownMes.Text);
+
+            asistencia2.Add(asistencia);
+            GuardarAsistencia();
         }
     }
 }
